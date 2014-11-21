@@ -1,0 +1,23 @@
+
+{
+	// Realm display name to use in the 401 Unauthenticated prompt to the user.
+	"realm": "Simple-HTTP-Proxy",
+
+	// Login credentials (username/password pairs) used to secure all requests to this proxy.
+	"userAccounts": {
+		"user1": "password1",
+		"user2": "password2"
+	},
+
+	// Proxies (maps from ports to the proxy destinations).
+	// Optionally includes user names and passwords to pass along.
+	"proxies": [
+		{ "port": "7777", "useSsl": true, "destination": "http://192.168.1.2" },
+		{ "port": "8888", "useSsl": true, "destination": "http://192.168.1.3" },
+		{ "port": "9999", "useSsl": true, "destination": "http://192.168.1.4", "userName": "someUser", "password": "somePassword" }
+	],
+
+	// SSL Certificate; utilized for proxies that have useSsl = true.
+	"certificatePath": "cert.pfx",
+	"certificatePassphrase": "certpassphrase"
+}

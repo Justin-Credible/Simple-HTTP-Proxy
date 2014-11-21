@@ -1,0 +1,26 @@
+{
+	"name": "Simple-HTTP-Proxy",
+	"version": "1.0.0",
+	"description": "A very simple and quick to setup HTTP proxy used to secure access to insecure devices.",
+	"author": "Justin Unterreiner <justin.unterreiner@gmail.com>",
+	"license": "MIT",
+	"readmeFilename": "README.md",
+	"homepage": "https://github.com/Justin-Credible/Simple-HTTP-Proxy",
+	"bugs": {
+		"url": "https://github.com/Justin-Credible/Simple-HTTP-Proxy/issues"
+	},
+	"keywords": [
+		"basic",
+		"auth",
+		"authorization",
+		"basicauth",
+		"proxy",
+		"reverse"
+	],
+	"dependencies": {
+		"basic-auth": "1.0.x",
+		"http-proxy": "1.6.x",
+		"strip-json-comments": "1.0.x"
+	},
+	"engine": "node >= 0.10.25"
+}
