@@ -120,6 +120,13 @@ var requestHandler = function (proxyServer, proxyInfo, request, response) {
 	// Setup a shared proxy server instance; this will perform the heavy lifting.
 	proxyServer = httpProxy.createProxyServer({});
 
+	// The http-proxy has code that throws an exception if there are no error handlers
+	// defined. We add one here so that if an error occurs it doesn't take down the node
+	// process. We only log without any error handling because we don't really care if
+	// there is a failure at this point since we are just proxying data (for example we
+	// don't care if the client closes their browser instance during a video stream).
+	proxyServer.on("error", function (error) { console.log(error); });
+
 	// For each of the proxy entries, setup a proxy server.
 	config.proxies.forEach(function (proxyInfo) {
 		var httpsServerOptions = {}, handler;
