@@ -75,11 +75,12 @@ var requestHandler = function (proxyServer, proxyInfo, request, response) {
 	}
 
 	// If the credentials were valid, then continue on.
-	util.log(util.format("%s -> %s %s %s",
+	util.log(util.format("%s -> %s %s %s (user: %s)",
 		request.headers.host,
 		proxyInfo.destination,
 		request.method,
-		request.url));
+		request.url,
+		credentials.name));
 
 	// If this proxy has a user name and/or password provided, then we'll include it
 	// otherwise we'll null out the header so these crendentials aren't sent along
